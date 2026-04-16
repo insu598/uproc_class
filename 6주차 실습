@@ -1,0 +1,25 @@
+void setup() {
+  // put your setup code here, to run once:
+Serial.begin(9600) ;
+DDRB = B00000000 ;
+DDRD = B10000000 ;
+PINB = B00000000 ;
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+int Value ;
+Value = 4 + 1 ;
+Serial.println( PINB ) ;
+if(PIND == 254)
+{
+  PORTD = B00000000 ;
+}
+
+else
+{
+PORTD = B10000000 ;
+}
+
+}
