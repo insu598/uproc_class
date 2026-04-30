@@ -1,0 +1,52 @@
+int Div( int a, int b)
+{
+  int c = a / b ;
+  return c ;
+}
+
+int Mul( int a, int b)
+{
+  int c = a * b ;
+  return c ;
+}
+
+int Sub( int a, int b )
+{
+  int c = a - b ;
+  return c ;
+}
+
+int Add( int a, int b )
+
+{
+  int c = a + b ;
+  return c ;
+}
+int function(int a)
+
+{
+  int b ;
+  b = a * 10 ;
+  return b ;
+}
+
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600) ;
+}
+
+void loop() {
+  // 및에 함수는 위에 a에 3을 넣어준다.
+ int Value1 = Add( 3, 40 ) ;
+ int Value2 = Sub( 3, 40 ) ;
+ int Value3 = Mul( 3, 40 ) ;
+ int Value4 = Div( 3, 40 ) ;
+ Serial.print(Value1) ;
+ Serial.print(",") ;
+ Serial.print(Value2) ;
+ Serial.print(",") ;
+ Serial.print(Value3) ;
+ Serial.print(",") ;
+ Serial.println(Value4) ;
+
+}
