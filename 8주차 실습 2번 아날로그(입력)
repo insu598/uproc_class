@@ -1,0 +1,13 @@
+void setup() {
+ pinMode( 6, OUTPUT ) ;
+ Serial.begin(9600) ;
+}
+
+void loop() {
+  //digitalWrite(6, 1) ;
+  int value =  analogRead(A0) ; //0~1023 (0~5V)
+  Serial.println(value) ; // 0 ~ 1023
+
+  analogWrite( 6, value/4 ) ;      //duty dyele : 0 ~ 255
+  // 발광다이오드의 밝기를 가변저항을 통하여 밝기를 조절하는 회로이다.
+}
