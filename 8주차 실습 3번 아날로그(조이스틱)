@@ -1,0 +1,15 @@
+void setup() {
+ pinMode( 6, OUTPUT ) ;
+ Serial.begin(9600) ;
+}
+
+void loop() {
+  int Vex = analogRead(A0) ;
+  int Vry = analogRead(A1) ;
+  Serial.print("X : ") ;
+  Serial.print(Vex) ;
+  Serial.print(",") ;
+  Serial.print(" Y : ") ;
+  Serial.println(Vry) ;
+//조이스틱 조절하는 회로이다.
+}
