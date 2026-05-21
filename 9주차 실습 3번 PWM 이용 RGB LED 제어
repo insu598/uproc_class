@@ -1,0 +1,13 @@
+void setup() {
+  // put your setup code here, to run once:
+  pinMoode( 9. OUTPUT) ;
+  pinMoode( 10. OUTPUT) ;
+  pinMoode( 11. OUTPUT) ;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  analogWrite( 9, 216 ) ;
+  analogWrite( 10, 102 ) ;
+  analogWrite( 11, 235 ) ;
+}
