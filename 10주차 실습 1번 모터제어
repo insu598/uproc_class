@@ -1,0 +1,17 @@
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(8, OUTPUT) ;
+  Serial.begin(9600) ;
+}
+
+void loop() {
+  int value = analogRead(A0) ;
+  Serial.println(value) ;
+
+  digitalWrite(8, 1) ;
+  int high_time = 1500 ;
+  delayMicroseconds(1500) ; // 500 0.5 ses
+
+  digitalWrite(8, 0) ;
+  delayMicroseconds(20000 - high_time) ; //19.5 sec
+}
