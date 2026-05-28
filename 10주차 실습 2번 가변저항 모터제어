@@ -1,0 +1,32 @@
+void setup() {
+  // 8번 핀을 출력으로 설정
+  pinMode(8, OUTPUT);
+
+  // 시리얼 모니터 시작
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  // 가변저항 값을 읽음 (0 ~ 1023)
+  int value = analogRead(A0);
+
+  // 읽은 값을 출력
+  Serial.println(value);
+
+  // 가변저항 값에 따라
+  // 서보모터 PWM 시간을 500 ~ 2500으로 변환
+  int high_time = map(value, 0, 1023, 500, 2500);
+
+  // 서보모터에 HIGH 신호 출력
+  digitalWrite(8, 1);
+
+  // high_time 동안 유지
+  delayMicroseconds(high_time);
+
+  // LOW 신호 출력
+  digitalWrite(8, 0);
+
+  // 나머지 시간을 LOW 상태로 유지
+  delayMicroseconds(20000 - high_time);
+}
