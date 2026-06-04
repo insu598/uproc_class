@@ -1,0 +1,33 @@
+unsigned long start_Time = 0 ;
+unsigned long end_Time = 0 ;
+void (Eoho)(void)
+{
+  int value = digitalRead(2) ;
+  if (value == 1) {
+    start_Time = micros() ;
+  }
+  else{
+    end_Time = micros() ;
+    unsigned long echo_time = end_Time - start_Time ;
+    Serial.println(echo_time) ;
+  }
+}
+
+void setup() 
+{
+  pinMode(3, OUTPUT) ;
+  pinMode(2, INPUT) ;
+
+  attachInterrupt( 0, Eoho, CHANGE ) ;
+  Serial.begin(9600) ;
+}
+
+void loop() 
+{
+  digitalWrite( 3, 0 ) ;
+  digitalWrite( 3, 1 ) ;
+  delayMicroseconds(10) ;
+  digitalWrite( 3, 0 ) ;
+  
+  delay(100) ;
+}
