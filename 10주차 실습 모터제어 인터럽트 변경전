@@ -1,0 +1,30 @@
+void Button( void )
+{  
+}
+
+void setup() {
+  pinMode(8, OUTPUT) ;
+  pinMode(2, INPUT) ;
+
+  attachInterrupt( 1, Button, CHANGE ) ;
+}
+
+void loop() {
+  int button = digitalRead(2) ;
+  if( button == 0 )
+  {
+    digitalWrite( 8, 1 ) ;
+    delayMicroseconds(1500) ;
+
+    digitalWrite( 8, 1 ) ;
+    delayMicroseconds(20000 - 1500) ;
+  }
+  else
+  {
+    digitalWrite( 8, 1 ) ;
+    delayMicroseconds(500) ;
+
+    digitalWrite( 8, 1 ) ;
+    delayMicroseconds(20000 - 500) ;    
+  }
+}
